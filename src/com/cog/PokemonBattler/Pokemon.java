@@ -11,7 +11,7 @@ public class Pokemon {
 	private String type;
 	
 	private static ArrayList<Pokemon> pokemonList = new ArrayList<Pokemon>();
-	
+		
 	Pokemon(String name, int hp, int attack, String sound, String move, String type) {
 		this.setName(name);
 		this.setHp(hp);
@@ -19,8 +19,13 @@ public class Pokemon {
 		this.setSound(sound);
 		this.setMove(move);
 		this.setType(type);
+		Pokemon.getPokemon().add(this);
 	}
 	
+	public static ArrayList<Pokemon> getPokemon() {
+		return pokemonList;
+	}
+
 	public String talk() {
 		return this.sound;
 	}
